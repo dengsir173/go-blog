@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <title>修改logo</title>
+</head>
+<body>
+<div class="container">
+    {{template "header"}}
+<h1 style="color: blue">请上传博客背景图:</h1>
+<form method="post" action="/uploadimage" enctype="multipart/form-data">
+    图片：<input type="file" name="file"><br><br>
+    <input type="submit" value="提交">
+
+</form>
+</div>
+
+</body>
+</html>
