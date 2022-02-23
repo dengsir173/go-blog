@@ -3,6 +3,8 @@
   <component name="Go" enabled="true" />
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/../demo" />
+    <content url="file://$MODULE_DIR$/../login" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
