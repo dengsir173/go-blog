@@ -60,9 +60,17 @@ func (mgr *manager) GetAllBlog() []model.Blog {
 }
 
 func (mgr *manager) GetBlog(bid int) model.Blog {
+	defer func() {
+		err := recover() //内置函数，能捕获到异常
+		if err != nil {
+			fmt.Println("出错了")
+		}
+	}()
+
 	var blog model.Blog
 	mgr.db.First(&blog, bid)
 	return blog
+
 }
 
 //图片操作
