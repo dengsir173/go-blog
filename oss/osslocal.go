@@ -14,9 +14,9 @@ import (
 func main() {
 	bucketname := "geleigo"
 	endpoint := "oss-cn-shenzhen.aliyuncs.com"
-	objectname := "11"                                  //存储路径
-	accesskey := "LTAI5t6BSawcVdzZXK65Dvn7"             //您的Accesskey
-	accesskeysecret := "HwzSrFLi0iPadPK1PvNbQHbxEi4Y6C" //您的Accesskeysecret
+	objectname := "11"       //存储路径
+	accesskey := "xxx"       //您的Accesskey
+	accesskeysecret := "xxx" //您的Accesskeysecret
 	contenttype := "application/json"
 	gmtdate := time.Now().UTC().Format(http.TimeFormat)
 	stringtosgin := "PUT\n\n" + contenttype + "\n" + gmtdate + "\n" + "/" + bucketname + "/" + objectname
