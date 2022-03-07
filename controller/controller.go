@@ -39,7 +39,7 @@ func ListUser(c *gin.Context) {
 
 func Index(c *gin.Context) {
 	//此处加入redis缓存
-	conn, err := redis.Dial("tcp", "175.178.125.249:6379")
+	conn, err := redis.Dial("tcp", "localhost:6379")
 	if err != nil {
 		fmt.Println("链接redis失败", err)
 		return
@@ -140,7 +140,7 @@ func UploadImage(c *gin.Context) {
 		Url: url,
 	}
 	dao.Mgr.AddImage(&image)
-	conn, err := redis.Dial("tcp", "175.178.125.249:6379")
+	conn, err := redis.Dial("tcp", "localhost:6379")
 	if err != nil {
 		fmt.Println("链接redis失败", err)
 		return
@@ -165,8 +165,8 @@ func Oss(filename string) string {
 	// Endpoint以杭州为例，其它Region请按实际情况填写。
 	endpoint := "oss-cn-shenzhen.aliyuncs.com"
 	// 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。
-	accessKeyId := "LTAI5t6BSawcVdzZXK65Dvn7"
-	accessKeySecret := "HwzSrFLi0iPadPK1PvNbQHbxEi4Y6C"
+	accessKeyId := "xxx"
+	accessKeySecret := "xxx"
 	bucketName := "geleigo"
 	// <yourObjectName>上传文件到OSS时需要指定包含文件后缀在内的完整路径，例如abc/efg/123.jpg。
 	objectName := "blog/" + filename
