@@ -29,6 +29,7 @@ func Start() {
 	router.POST("/uploadimage", controller.UploadImage)
 	//直播间
 	router.GET("/golivehome", controller.GoLiveHome)
+	router.GET("getliveurl", controller.GetLiveUrl)
 	router.Run(":80")
 
 }

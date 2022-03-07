@@ -39,7 +39,7 @@ func ListUser(c *gin.Context) {
 
 func Index(c *gin.Context) {
 	//此处加入redis缓存
-	conn, err := redis.Dial("tcp", "124.71.14.55:6379")
+	conn, err := redis.Dial("tcp", "175.178.125.249:6379")
 	if err != nil {
 		fmt.Println("链接redis失败", err)
 		return
@@ -140,7 +140,7 @@ func UploadImage(c *gin.Context) {
 		Url: url,
 	}
 	dao.Mgr.AddImage(&image)
-	conn, err := redis.Dial("tcp", "124.71.14.55:6379")
+	conn, err := redis.Dial("tcp", "175.178.125.249:6379")
 	if err != nil {
 		fmt.Println("链接redis失败", err)
 		return
@@ -189,4 +189,14 @@ func Oss(filename string) string {
 	}
 	img := "http://" + bucketName + "." + endpoint + "/" + objectName
 	return img
+}
+
+//直播间
+func GoLiveHome(c *gin.Context) {
+	c.HTML(200, "livehome.html", nil)
+}
+
+//获取直播url
+func GetLiveUrl(c *gin.Context) {
+	c.JSON(200, "../assets/video/nxhe.mp4")
 }

@@ -28,7 +28,7 @@ type manager struct {
 var Mgr Manager
 
 func init() {
-	db, err := gorm.Open("mysql", "root:root@tcp(124.71.14.55:3306)/test?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "root:root@tcp(175.178.125.249:3306)/test?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		fmt.Println("database connect error")
 		return

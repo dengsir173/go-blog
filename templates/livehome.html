@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/dplayer/1.25.1/DPlayer.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/dplayer/1.25.0/DPlayer.min.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <title>live</title>
+</head>
+<body>
+<div class="container">
+    {{template "header"}}
+    <p style="color: red">博主上线时间：22：00</p>
+    <div id="dplayer" style="font-size: 12px;height: 500px;width: 500px"><img src="../assets/img/livelogo.jpg" style="width: 350px;height: 500px;"></div>
+    <button id="click1">点击观看</button>
+</div>
+</body>
+<!--<script type="text/javascript" src="../assets/js/dplay.js"></script>-->
+<script>
+        $("#click1").click(function () {
+            $.ajax({
+                url: "/getliveurl",
+                dataType: "json",
+                type: "get",
+                success: function (result) {
+                    url = result;
+                    dp = new DPlayer({
+                        container: document.getElementById('dplayer'),
+                        autoplay: true,
+                        video: {
+                            url: url,
+                            pic: '../assets/img/livelogo.jpg',
+                        },
+                    });
+                },
+                error: function (result) {
+                    alert(result)
+                }
+            });
+        });
+</script>
+</html>
+

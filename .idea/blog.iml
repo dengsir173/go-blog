@@ -2,9 +2,13 @@
 <module type="WEB_MODULE" version="4">
   <component name="Go" enabled="true" />
   <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../EasyDarwin" />
     <content url="file://$MODULE_DIR$" />
     <content url="file://$MODULE_DIR$/../demo" />
+    <content url="file://$MODULE_DIR$/../ffmpeg" />
+    <content url="file://$MODULE_DIR$/../gin-rtsp" />
     <content url="file://$MODULE_DIR$/../login" />
+    <content url="file://$MODULE_DIR$/../rtsp-change" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
